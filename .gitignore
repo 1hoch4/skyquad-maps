@@ -1,0 +1,9 @@
+# Paths were generated files goes to
+/bin/
+/gen/
+# same for tests
+/tests/bin
+/tests/gen
+# temporary files
+*.swp
+*~

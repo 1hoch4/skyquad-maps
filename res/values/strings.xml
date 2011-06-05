@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <string name="appName">Main</string>
+    <string name="gMapsApiKey">07q9M4Q-Gj-2m9xJ20bj6tyXWed6NWHs4e0QmIw</string>
+    <string name="timeBetweenLocationUpdates">5</string>
+    <string name="minDistanceBeforeLocationUpdate">7</string>
+
+    <!-- Main Menu -->
+    <string name="welcomeMessage">Welcome at QuadSkymaps!</string>
+    <string name="location">Select a location:</string>
+    <string name="or">or</string>
+    <string name="useGps">Use GPS</string>
+    <string name="newMap">New Map</string>
+    <string name="loadMap">Load Map</string>
+
+    <!-- Location Chooser -->
+    <string name="missingGpsTitle">GPS Error</string>
+    <string name="missingGpsMsg">Could not get GPS Position.</string>
+    <string name="openMap">Open Map</string>
+    <string name="latitude">Latitude:</string>
+    <string name="latitiudeDefault">40.47</string>
+    <string name="longitude">Longitude:</string>
+    <string name="longitudeDefault">73.58</string>
+</resources>

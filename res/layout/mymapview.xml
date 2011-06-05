@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ SkyQuad Maps - Plan routes for your quadrotor
+
+ Licensed under the GNU General Public License v3
+ (c) 2011, Jörg Thalheim <jthalheim@gmail.com>
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_height="fill_parent"
+              android:layout_width="fill_parent">
+
+  <!-- Toolbar above the map -->
+  <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+      <!-- Toggle satellite and map view -->
+      <CheckBox android:id="@+id/satellite" android:text=" Satellite "
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent" android:layout_height="wrap_content">
+      <!-- Longitude of current Marker/Position -->
+      <TextView android:id="@+id/longitude" android:text="Longitude:"
+                android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+      <!-- Latitude of current Marker/Position -->
+      <TextView android:id="@+id/latitude" android:text="Latitude:"
+                android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+  </LinearLayout>
+
+  <!-- The Map -->
+  <com.google.android.maps.MapView
+      android:id="@+id/mapview" android:clickable="true"
+      android:layout_width="fill_parent" android:layout_height="fill_parent"
+      android:apiKey="@string/gMapsApiKey" />
+
+  <!-- Slider for resizing purpose -->
+  <SeekBar android:id="@+id/zoombar" android:progress="0"
+           android:max="20" android:layout_width="fill_parent"
+           android:layout_height="wrap_content" />
+</LinearLayout>
+
+
+
