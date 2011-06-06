@@ -30,7 +30,7 @@ public class LocationChooser extends Activity {
 	private CheckBox mUseGps;
 	private Button mOpenMapButton;
 	private ExtGeoPoint mLocation;
-	private ExtEditText mLatitude, mLongitude;
+	private MyEditText mLatitude, mLongitude;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -58,8 +58,8 @@ public class LocationChooser extends Activity {
 		// mLatitude = new MyEditText(findViewById(R.id.latitude).getContext());
 		// mLongitude = new
 		// MyEditText(findViewById(R.id.longitude).getContext());
-		mLatitude = (ExtEditText) findViewById(R.id.latitude);
-		mLongitude = (ExtEditText) findViewById(R.id.longitude);
+		mLatitude = (MyEditText) findViewById(R.id.latitude);
+		mLongitude = (MyEditText) findViewById(R.id.longitude);
 		mOpenMapButton = (Button) findViewById(R.id.openMap);
 
 		// Toggle use GPS
@@ -170,6 +170,24 @@ public class LocationChooser extends Activity {
 		}
 
 		public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		}
+	}
+
+	private class MyEditText extends EditText {
+		public MyEditText(Context context, AttributeSet attrs) {
+			super(context, attrs);		
+		}
+
+		public void setEditable(boolean mode) {
+			this.setFocusable(mode);
+			this.setFocusableInTouchMode(mode);
+			this.setClickable(mode);
+			// Indicate the state of the control by using a colors.
+			if (mode) {
+				this.setTextColor(Color.BLACK);
+			} else {
+				this.setTextColor(Color.GRAY);
+			}
 		}
 	}
 }
