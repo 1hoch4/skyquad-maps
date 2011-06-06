@@ -7,7 +7,7 @@ Plan your flight routes for your [SkyQuad](http://1hoch4.de/) quadrotor on your 
 [Eclipse with ADT Plugin](http://developer.android.com/sdk/eclipse-adt.html) (optional) - my current IDE and development enviroment
 
 #SETUP
-Here is my workflow:
+Here is my workflow with for eclipse:
 
 * install the requirements
 
