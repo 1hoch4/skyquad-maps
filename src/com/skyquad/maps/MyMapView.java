@@ -46,11 +46,11 @@ public class MyMapView extends MapActivity {
 		Log.v("MyMapView", "Mode: " + String.valueOf(bundle.getInt("Mode")));
 
 		if (Mode == 1) {
-			int latitudeE6 = bundle.getInt("Latitude");
-			int longitudeE6 = bundle.getInt("Longitude");
-			Log.v("MyMapView", "Latitude " + String.valueOf(latitudeE6));
-			Log.v("MyMapView", "Longitude " + String.valueOf(longitudeE6));
-			ExtGeoPoint initGeoPoint = new ExtGeoPoint(latitudeE6,longitudeE6);
+			double latitude = bundle.getDouble("Latitude", R.string.latitiudeDefault);
+			double longitude = bundle.getDouble("Longitude", R.string.longitudeDefault);
+			Log.v("MyMapView", "Latitude " + String.valueOf(latitude));
+			Log.v("MyMapView", "Longitude " + String.valueOf(longitude));
+			ExtGeoPoint initGeoPoint = new ExtGeoPoint(latitude,longitude);
 			CenterLocation(initGeoPoint);
 		}		
 	}
@@ -67,6 +67,8 @@ public class MyMapView extends MapActivity {
 
 	private void CenterLocation(ExtGeoPoint centerGeoPoint) {
 		mMapController.animateTo(centerGeoPoint);
+		mLongitude.setText("Longitude: " + centerGeoPoint.getLongitudeAsStr());
+		mLatitude.setText("Latitude: " + centerGeoPoint.getLatitudeAsStr());
 	};
 
 	private CheckBox.OnClickListener mySatelliteOnClickListener = new CheckBox.OnClickListener() {

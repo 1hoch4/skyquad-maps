@@ -104,6 +104,7 @@ public class LocationChooser extends Activity {
 		String longitude = mLongitude.getText().toString();
 		if (!(latitude.equals("") || longitude.equals("") ||
 				latitude.equals("-") || longitude.equals("-"))) {
+			Log.v("LocationChooser", latitude + ":" + longitude);
 			double locationLatitude = Float.parseFloat(longitude);
 			double locationLongitude = Float.parseFloat(latitude);		
 
@@ -130,8 +131,8 @@ public class LocationChooser extends Activity {
 			// Mode 1: we have a starting point.
 			bundle.putInt("Mode", 1);
 
-			bundle.putInt("Latitude", startLocation.getLatitudeE6());
-			bundle.putInt("Longitude", startLocation.getLongitudeE6());
+			bundle.putDouble("Latitude", startLocation.getLatitude());
+			bundle.putDouble("Longitude", startLocation.getLongitude());
 			bundle.putString("Boston", "Tea");
 		}
 
