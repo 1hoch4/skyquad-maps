@@ -23,7 +23,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
+/**
+ * This class let the user choose the initial location from gps or coordinates.
+ */
 public class LocationChooser extends Activity {
 	private LocationManager mLocationManager;
 	private LocationListener mLocationListener;
@@ -49,6 +51,7 @@ public class LocationChooser extends Activity {
 						Float.parseFloat(getString(R.string.minDistanceBeforeLocationUpdate)),
 						mLocationListener);
 	}
+
 
 	private void loadMenu() {
 		// Init UI
@@ -173,7 +176,7 @@ public class LocationChooser extends Activity {
 		}
 	}
 
-	private class MyEditText extends EditText {
+	public static class MyEditText extends EditText {
 		public MyEditText(Context context, AttributeSet attrs) {
 			super(context, attrs);		
 		}
