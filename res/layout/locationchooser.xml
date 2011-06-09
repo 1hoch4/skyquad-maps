@@ -1,46 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SkyQuad Maps - Plan routes for your quadrotor Licensed under the GNU 
-	General Public License v3 (c) 2011, Jörg Thalheim <jthalheim@gmail.com> -->
+<!--
+    SkyQuad Maps - Plan routes for your quadrotor
+
+    Licensed under the GNU General Public License v3
+    (c) 2011, Jörg Thalheim <jthalheim@gmail.com>
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-	<!-- Select location ... -->
-	<TextView android:id="@+id/location" android:text="@string/location"
-		android:textStyle="bold" android:layout_gravity="center"
-		android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <!-- Select location ... -->
+    <TextView android:id="@+id/location" android:text="@string/location"
+        android:textStyle="bold" android:layout_gravity="center"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-	<!-- ... GPS as initial position -->
-	<CheckBox android:id="@+id/useGps" android:text="@string/useGps"
-		android:layout_height="wrap_content" android:layout_gravity="center"
-		android:layout_width="wrap_content" />
+    <!-- ... GPS as initial position -->
+    <CheckBox android:id="@+id/useGps" android:text="@string/useGps"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:layout_width="wrap_content" />
 
-	<!-- Latitude -->
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="wrap_content">
-		<TextView android:text="@string/latitude"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <!-- Latitude -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:text="@string/latitude"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-		<view class="com.skyquad.maps.LocationChooser$MyEditText"
-			android:id="@+id/latitude" android:text="@string/latitiudeDefault"
-			android:inputType="numberDecimal|numberSigned|number"
-			android:layout_height="wrap_content" android:layout_width="fill_parent" />
-	</LinearLayout>
+        <view class="com.skyquad.maps.LocationChooser$MyEditText"
+            android:id="@+id/latitude" android:text="@string/latitiudeDefault"
+            android:inputType="numberDecimal|numberSigned|number"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" />
+    </LinearLayout>
 
 
-	<!-- Longitude -->
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent" android:layout_height="wrap_content">
-		<TextView android:text="@string/longitude"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <!-- Longitude -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:text="@string/longitude"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-		<com.skyquad.maps.ExtEditText android:id="@+id/longitude"
-			android:text="@string/longitudeDefault" android:inputType="numberDecimal|numberSigned|number"
-			android:layout_height="wrap_content" android:layout_width="fill_parent" />
-	</LinearLayout>
+        <view class="com.skyquad.maps.LocationChooser$MyEditText"
+            android:id="@+id/longitude" android:text="@string/longitudeDefault"
+            android:inputType="numberDecimal|numberSigned|number"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" />
+    </LinearLayout>
 
-	<!-- Continue -->
-	<Button android:id="@+id/openMap" android:text="@string/openMap"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <!-- Continue -->
+    <Button android:id="@+id/openMap" android:text="@string/openMap"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
 
 </LinearLayout>
