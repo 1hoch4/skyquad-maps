@@ -10,29 +10,26 @@ import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
 
+/**
+ * This class handles the conversion between microdegrees and degreese
+ * and provide serialisation.
+ */
 public class ExtGeoPoint extends GeoPoint {
 	public ExtGeoPoint(double latitude, double longitude) {
-		super((int) (latitude * 1000000), (int) (longitude * 1000000));
-		Log.v("ExtGeoPoint", (latitude * 1000000) + ":" + (longitude * 1000000));
+		super((int) (latitude * 1E6), (int) (longitude * 1E6));		
 		Log.v("ExtGeoPoint",getLatitudeAsStr() + ":" + getLongitudeAsStr());
 	}
 	
 	public ExtGeoPoint(int latitudeE6, int longitudeE6) {
-		super((int) (latitudeE6), (int) (longitudeE6));
+		super(latitudeE6, longitudeE6);
 	}
-
-	@Override
-	public int getLatitudeE6() {
-		return super.getLatitudeE6();
-	}
-
-	@Override
-	public int getLongitudeE6() {
-		return super.getLongitudeE6();
+	
+	public ExtGeoPoint(GeoPoint p) {
+		super(p.getLatitudeE6(), p.getLongitudeE6());
 	}
 
 	public double getLatitude() {
-		return (double) getLatitudeE6() / 1E6;
+		return getLatitudeE6() / 1E6;
 	}
 
 	public String getLatitudeAsStr() {
@@ -40,7 +37,7 @@ public class ExtGeoPoint extends GeoPoint {
 	}
 
 	public double getLongitude() {
-		return (double) getLongitudeE6() / 1E6;
+		return getLongitudeE6() / 1E6;
 	}
 
 	public String getLongitudeAsStr() {
