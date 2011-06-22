@@ -15,9 +15,13 @@ import com.google.android.maps.GeoPoint;
  * and provide serialisation.
  */
 public class ExtGeoPoint extends GeoPoint {
+	// Debugging
+	private static final String TAG = "ExtGeoPoint";
+	private static final boolean D = true;
+
 	public ExtGeoPoint(double latitude, double longitude) {
 		super((int) (latitude * 1E6), (int) (longitude * 1E6));		
-		Log.v("ExtGeoPoint",getLatitudeAsStr() + ":" + getLongitudeAsStr());
+		if (D) Log.d(TAG, toString());
 	}
 	
 	public ExtGeoPoint(int latitudeE6, int longitudeE6) {
@@ -32,6 +36,8 @@ public class ExtGeoPoint extends GeoPoint {
 		return getLatitudeE6() / 1E6;
 	}
 
+	// Damn Java, doesn't support function signatures,
+	// based of return types
 	public String getLatitudeAsStr() {
 		return String.valueOf(getLatitude());
 	}
@@ -42,5 +48,9 @@ public class ExtGeoPoint extends GeoPoint {
 
 	public String getLongitudeAsStr() {
 		return String.valueOf(getLongitude());
+	}
+	
+	public String toString() {
+		return getLatitudeAsStr() + ":" + getLongitudeAsStr();
 	}
 }
