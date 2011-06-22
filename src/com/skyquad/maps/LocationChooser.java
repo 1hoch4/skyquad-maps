@@ -30,7 +30,7 @@ public class LocationChooser extends Activity {
 	private LocationManager mLocationManager;
 	private LocationListener mLocationListener;
 	private CheckBox mUseGps;
-	private Button mOpenMapButton;
+	private Button bOpenMap;
 	private ExtGeoPoint mLocation;
 	private MyEditText mLatitude, mLongitude;
 
@@ -47,8 +47,8 @@ public class LocationChooser extends Activity {
 		mLocationManager
 				.requestLocationUpdates(
 						LocationManager.GPS_PROVIDER,
-						Long.parseLong(getString(R.string.timeBetweenLocationUpdates)),
-						Float.parseFloat(getString(R.string.minDistanceBeforeLocationUpdate)),
+						Long.parseLong(getString(R.string.timeBetweenGpsUpdates)),
+						Float.parseFloat(getString(R.string.minDistanceBeforeGpsUpdate)),
 						mLocationListener);
 	}
 
@@ -58,12 +58,9 @@ public class LocationChooser extends Activity {
 		setContentView(R.layout.locationchooser);
 		// Get reference to UI elements
 		mUseGps = (CheckBox) findViewById(R.id.useGps);
-		// mLatitude = new MyEditText(findViewById(R.id.latitude).getContext());
-		// mLongitude = new
-		// MyEditText(findViewById(R.id.longitude).getContext());
 		mLatitude = (MyEditText) findViewById(R.id.latitude);
 		mLongitude = (MyEditText) findViewById(R.id.longitude);
-		mOpenMapButton = (Button) findViewById(R.id.openMap);
+		bOpenMap = (Button) findViewById(R.id.openMap);
 
 		// Toggle use GPS
 		mUseGps.setOnClickListener(new CheckBox.OnClickListener() {
@@ -95,7 +92,7 @@ public class LocationChooser extends Activity {
 		mLatitude.setOnKeyListener(locationOnKeyListener);
 		mLongitude.setOnKeyListener(locationOnKeyListener);
 
-		mOpenMapButton.setOnClickListener(new Button.OnClickListener() {
+		bOpenMap.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View arg0) {
 				openMyMapsView(mLocation);
 			}
@@ -146,8 +143,8 @@ public class LocationChooser extends Activity {
 	private void missingGps() {
 		AlertDialog alertDialog;
 		alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle(R.string.missingGpsTitle);
-		alertDialog.setMessage(this.getText(R.string.missingGpsMsg));
+		alertDialog.setTitle(getText((R.string.noGpsTitle)));
+		alertDialog.setMessage(getText(R.string.noGpsMsg));
 		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				return;
