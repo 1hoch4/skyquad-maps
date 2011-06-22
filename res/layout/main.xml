@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-	SkyQuad Maps - Plan routes for your quadrotor
+    SkyQuad Maps - Plan routes for your quadrotor
 
-	Licensed under the GNU General Public License v3
-	(c) 2011, Jörg Thalheim <jthalheim@gmail.com>
+    Licensed under the GNU General Public License v3
+    (c) 2011, Jörg Thalheim <jthalheim@gmail.com>
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	<!-- Welcome message -->
-	<TextView android:text="@string/welcomeMessage"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- Welcome message -->
+    <TextView android:text="@string/welcomeMessage"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
 
-	<!-- New map -->
-	<Button android:id="@+id/newMap" android:text="@string/newMap"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <!-- Connection Status -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:text="@string/conStatTitle"
+            android:textStyle="bold" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tvConnectionStatus"
+            android:text="@string/conStatNotConnected" android:gravity="right"
+            android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
 
-	<!-- Load map -->
-	<Button android:id="@+id/loadMap" android:text="@string/loadMap"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <!-- Current bluetooth device -->
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <TextView android:text="@string/selectedDeviceTitle"
+            android:textStyle="bold" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tvSelectedDevice"
+            android:gravity="right" android:text="none"
+            android:layout_height="wrap_content" android:layout_width="fill_parent" />
+    </LinearLayout>
+
+    <Button android:id="@+id/bConnect" android:text="@string/bConnect"
+        android:layout_height="wrap_content" android:layout_width="wrap_content" />
+
+    <!-- New map -->
+    <Button android:id="@+id/newMap" android:text="@string/newMap"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+    <!-- Load map -->
+    <Button android:id="@+id/loadMap" android:text="@string/loadMap"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
 
 </LinearLayout>

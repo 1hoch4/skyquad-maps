@@ -3,23 +3,50 @@
     <!-- General -->
     <string name="appName">Main</string>
     <string name="gMapsApiKey">07q9M4Q-Gj-2m9xJ20bj6tyXWed6NWHs4e0QmIw</string>
-    <string name="timeBetweenLocationUpdates">5</string>
-    <string name="minDistanceBeforeLocationUpdate">7</string>
+    <string name="timeBetweenGpsUpdates">5</string>
+    <string name="minDistanceBeforeGpsUpdate">7</string>
+
 
     <!-- Main Menu -->
     <string name="welcomeMessage">Welcome at QuadSkymaps!</string>
-    <string name="location">Select a location:</string>
-    <string name="or">or</string>
-    <string name="useGps">Use GPS</string>
+    
+    <string name="conStatTitle">Connection status: </string>    
+    <string name="conStatNotConnected">not connected</string>
+    <string name="conStatConnecting">connecting...</string>
+    <string name="conStatConnected">connected</string>    
+    <string name="conStatBluetoothDisabled">BT disabled</string>
+    <string name="conStatUnavailable">BT not available</string>
+        
+    <string name="bluetoothNotSelected">no Bluetooth device selected</string>
+    <string name="bluetoothNotAvailable">Bluetooth not Available</string>
+    
+    <string name="selectedDeviceTitle">Selected Device:</string>
+      
+    <string name="bConnect">Connect</string>
     <string name="newMap">New Map</string>
     <string name="loadMap">Load Map</string>
-
+    
+    
     <!-- Location Chooser -->
-    <string name="missingGpsTitle">GPS Error</string>
-    <string name="missingGpsMsg">Could not get GPS Position.</string>
+    <string name="locationChooserTitle">Select a location:</string>
+    
+    <string name="useGps">Use GPS</string>
     <string name="openMap">Open Map</string>
     <string name="latitude">Latitude:</string>
     <string name="latitiudeDefault">40.47</string>
     <string name="longitude">Longitude:</string>
     <string name="longitudeDefault">73.58</string>
+    
+    <string name="noGpsTitle">GPS Error</string>
+    <string name="noGpsMsg">Could not get GPS Position.</string>
+    
+
+    <!-- DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="selectDevice">select a device to connect</string>
+    <string name="nonePaired">No devices have been paired</string>
+    <string name="noneFound">No devices found</string>
+    <string name="pairedDevicesTitle">Paired Devices</string>
+    <string name="otherDevicesTitle">Other Available Devices</string>
+    <string name="buttonScan">Scan for devices</string>
 </resources>

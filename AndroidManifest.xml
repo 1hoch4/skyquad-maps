@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.skyquad.maps" android:versionCode="1" android:versionName="1.0">
-	<uses-sdk android:targetSdkVersion="8" android:minSdkVersion="8"></uses-sdk>
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    package="com.skyquad.maps" android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk android:targetSdkVersion="8"
+        android:minSdkVersion="8"></uses-sdk>
 
-	<application android:label="@string/appName" android:icon="@drawable/icon"
-		android:debuggable="true">
-		<uses-library android:name="com.google.android.maps" />
-		
-		<activity android:name="Main" android:label="@string/appName">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.skyquad.maps.MyMapView"></activity>
-		<activity android:name="com.skyquad.maps.LocationChooser"></activity>
-	</application>
+    <!-- For Google Maps -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- To connect to quadrotor -->
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+
+    <application android:label="@string/appName"
+        android:icon="@drawable/icon" android:debuggable="true">
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity android:name=".Main" android:label="@string/appName"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyMapView"></activity>
+        <activity android:name=".LocationChooser"></activity>
+
+        <activity android:name=".DeviceListActivity"
+            android:label="@string/selectDevice" android:theme="@android:style/Theme.Dialog"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".PIDSettings" android:label="@string/appName"
+            android:configChanges="orientation|keyboardHidden" />
+    </application>
 </manifest>
 
